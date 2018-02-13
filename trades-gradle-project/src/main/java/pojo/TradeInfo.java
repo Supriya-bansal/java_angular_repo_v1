@@ -2,6 +2,8 @@ package pojo;
 
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Value;
+
 
 /**
  * @author Supriya
@@ -28,6 +30,8 @@ public class TradeInfo {
 	private String premiumType;
 	private Date premiumDate;
 	private String valueDate;
+	
+	@Value("CS Zurich")
 	private String legalEntity;
 	private String trader;
 	private ErrorDto errorObj;

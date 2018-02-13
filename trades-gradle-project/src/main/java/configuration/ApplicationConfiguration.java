@@ -26,7 +26,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 	    @Bean
 	    public InternalResourceViewResolver viewResolver() {
 	        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-	        resolver.setPrefix("/WEB-INF/");
+	        resolver.setPrefix("WEB-INF/");
 	        resolver.setSuffix(".html");
 	        return resolver;
 	    }
