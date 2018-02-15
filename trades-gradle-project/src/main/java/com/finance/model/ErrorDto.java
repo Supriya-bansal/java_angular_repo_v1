@@ -1,7 +1,7 @@
 /**
  * 
  */
-package pojo;
+package com.finance.model;
 
 /**
  * @author Supriya
@@ -13,6 +13,12 @@ public class ErrorDto {
 	private String errorCode;
 	private String errorClass;
 	
+	public ErrorDto(String errorMsg, String errorCode, String errorClass) {
+		super();
+		this.errorMsg = errorMsg;
+		this.errorCode = errorCode;
+		this.errorClass = errorClass;
+	}
 	public String getErrorMsg() {
 		return errorMsg;
 	}

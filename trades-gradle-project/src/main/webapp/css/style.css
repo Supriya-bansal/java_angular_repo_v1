@@ -1,0 +1,75 @@
+/**
+ * 
+ * @author Supriya
+ */
+
+<style>
+input[type=textarea], select {
+	width: 60%;
+	margin: 8px 0px;
+	height: 100px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=button] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	margin: 8px 0px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.highlighted {
+    background: red;
+}
+.nonhighlighted {
+    background: white;
+}
+
+input[type=button]:hover {
+	background-color: #45a049;
+}
+
+div {
+	border-radius: 5px;
+	padding: 10px;
+}
+
+table {
+	color: #333; /* Lighten up font color */
+	font-family: Helvetica, Arial, sans-serif; /* Nicer font */
+	width: 100%;
+	border-spacing: 0;
+	margin-top: 10px;
+}
+
+td, th {
+	border: 1px solid #CCC;
+	height: 30px;
+} /* Make cells a bit taller */
+th {
+	background: #F3F3F3; /* Light grey background */
+	font-weight: bold; /* Make sure they're bold */
+}
+
+td {
+	background: #FAFAFA; /* Lighter grey background */
+}
+
+tr:hover {
+	background-color: #f5f5f5;
+}
+
+img:hover {
+	cursor: pointer;
+}
+
+li {
+	color: red;
+}
+</style>

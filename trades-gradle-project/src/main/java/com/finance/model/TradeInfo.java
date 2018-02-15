@@ -1,8 +1,7 @@
-package pojo;
+package com.finance.model;
 
-import java.util.Date;
-
-import org.springframework.beans.factory.annotation.Value;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -13,28 +12,27 @@ public class TradeInfo {
 	
 	private String customer;
 	private String ccyPair;
+	
 	private String type;
 	private String style;
 	private String direction;
 	private String strategy;
-	private Date tradeDate;
+	private String tradeDate;
 	private double amount1;
 	private double amount2;
 	private String rate;
-	private Date deliveryDate;
-	private Date expiryDate;
-	private Date excerciseStartDate;
+	private String deliveryDate;
+	private String expiryDate;
+	private String excerciseStartDate;
 	private String payCcy;
 	private float premium;
 	private String premiumCcy;
 	private String premiumType;
-	private Date premiumDate;
+	private String premiumDate;
 	private String valueDate;
-	
-	@Value("CS Zurich")
 	private String legalEntity;
 	private String trader;
-	private ErrorDto errorObj;
+	private List<ErrorDto> listOfErrors = new ArrayList<>();
 	
 	public String getCustomer() {
 		return customer;
@@ -48,6 +46,7 @@ public class TradeInfo {
 	public void setCcyPair(String ccyPair) {
 		this.ccyPair = ccyPair;
 	}
+	
 	public String getType() {
 		return type;
 	}
@@ -72,10 +71,10 @@ public class TradeInfo {
 	public void setStrategy(String strategy) {
 		this.strategy = strategy;
 	}
-	public Date getTradeDate() {
+	public String getTradeDate() {
 		return tradeDate;
 	}
-	public void setTradeDate(Date tradeDate) {
+	public void setTradeDate(String tradeDate) {
 		this.tradeDate = tradeDate;
 	}
 	public double getAmount1() {
@@ -96,24 +95,7 @@ public class TradeInfo {
 	public void setRate(String rate) {
 		this.rate = rate;
 	}
-	public Date getDeliveryDate() {
-		return deliveryDate;
-	}
-	public void setDeliveryDate(Date deliveryDate) {
-		this.deliveryDate = deliveryDate;
-	}
-	public Date getExpiryDate() {
-		return expiryDate;
-	}
-	public void setExpiryDate(Date expiryDate) {
-		this.expiryDate = expiryDate;
-	}
-	public Date getExcerciseStartDate() {
-		return excerciseStartDate;
-	}
-	public void setExcerciseStartDate(Date excerciseStartDate) {
-		this.excerciseStartDate = excerciseStartDate;
-	}
+	
 	public String getPayCcy() {
 		return payCcy;
 	}
@@ -138,10 +120,29 @@ public class TradeInfo {
 	public void setPremiumType(String premiumType) {
 		this.premiumType = premiumType;
 	}
-	public Date getPremiumDate() {
+	
+	public String getPremiumDate() {
 		return premiumDate;
 	}
-	public void setPremiumDate(Date premiumDate) {
+	public String getDeliveryDate() {
+		return deliveryDate;
+	}
+	public void setDeliveryDate(String deliveryDate) {
+		this.deliveryDate = deliveryDate;
+	}
+	public String getExpiryDate() {
+		return expiryDate;
+	}
+	public void setExpiryDate(String expiryDate) {
+		this.expiryDate = expiryDate;
+	}
+	public String getExcerciseStartDate() {
+		return excerciseStartDate;
+	}
+	public void setExcerciseStartDate(String excerciseStartDate) {
+		this.excerciseStartDate = excerciseStartDate;
+	}
+	public void setPremiumDate(String premiumDate) {
 		this.premiumDate = premiumDate;
 	}
 	public String getValueDate() {
@@ -162,12 +163,14 @@ public class TradeInfo {
 	public void setTrader(String trader) {
 		this.trader = trader;
 	}
-	public ErrorDto getErrorObj() {
-		return errorObj;
+	public List<ErrorDto> getListOfErrors() {
+		return listOfErrors;
 	}
-	public void setErrorObj(ErrorDto errorObj) {
-		this.errorObj = errorObj;
+	public void setListOfErrors(List<ErrorDto> listOfErrors) {
+		this.listOfErrors = listOfErrors;
 	}
+	
+	
 	
 	
 	

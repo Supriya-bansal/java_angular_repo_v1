@@ -1,0 +1,88 @@
+<!doctype html>
+
+<html ng-app="myApp">
+
+
+<head>
+<title>Welcome to Trades Info</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<script src="js/tradesController.js"></script>
+<link rel="stylesheet"
+	href="css/style.css"></link>
+</head>
+
+<body>
+	<div ng-controller="tradeController">
+		<p>Json Input Data</p>
+		 <div ng-if="'' != parentErrorObj.errorMsg" class="{{parentErrorObj.errorClass}}">{{parentErrorObj.errorMsg}}</div> 
+
+		<div>
+			<input type="textarea" placeholder="Provide Input"
+				ng-model="listOftradeInfoJson" />
+			<ul style="padding-left: 15px;" ng-repeat="x in errorList">
+				<li>{{x.errorMsg}}</li>
+			</ul>
+		</div>
+		
+		<input type="button" value="Submit" ng-click="getData()" />
+
+
+		<table ng-show="postValidationList.length >0">
+			<tr>
+			<th>S.No</th>
+				<th>Customer</th>
+				<th>Trade Type</th>
+				<th>Direction</th>
+				<th>Amount1</th>
+				<th>Amount2</th>
+				
+				<th>Value Date</th>
+				<th>Trade Date</th>
+				<th>Delivery Date</th>
+				<th>Expiry Date</th>
+				<th>Exercise Start Date</th>
+				<th>Premium Date</th>
+				
+				<th>Pay Currency</th>
+				<th>Premium Currency</th>
+				<th>Style</th>
+				<th>Trader</th>
+				<th>Errors</th>
+			</tr>
+			<tr ng-repeat="x in postValidationList">
+                <td>{{$index+1}}</td>
+				<td>{{ x.customer }}</td>
+				<td>{{ x.type }}</td>
+				<td>{{ x.direction }}</td>
+				<td>{{ x.amount1 }}</td>
+				<td>{{ x.amount2 }}</td>
+				<td>{{ x.valueDate }}</td>
+				<td>{{ x.tradeDate }}</td>
+				<td>{{ x.deliveryDate }}</td>
+				<td>{{ x.expiryDate }}</td>
+				<td>{{ x.excerciseStartDate }}</td>
+				<td>{{ x.premiumDate }}</td>
+				<td>{{ x.payCcy }}</td>
+				<td>{{ x.premiumCcy }}</td>
+				<td>{{ x.style }}</td>
+				<td>{{ x.trader }}</td>
+				<td ng-if="x.listOfErrors.length > 0"><img alt="Click to check errors"
+					src="images/error.png" height=20 width=20
+					ng-click="getErrorDetails(x.listOfErrors)"></img></td>
+				<td ng-if="x.listOfErrors.length == 0"><img
+					src="images/success.png" height=20 width=20></img></td>
+			</tr>
+			</tbody>
+
+		</table>
+
+	</div>
+</body>
+</html>

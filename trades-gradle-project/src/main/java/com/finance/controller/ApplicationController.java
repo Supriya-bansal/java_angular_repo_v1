@@ -1,12 +1,13 @@
 /**
  * 
  */
-package configuration;
+package com.finance.controller;
+
+import java.io.IOException;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author Supriya
@@ -15,9 +16,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ApplicationController {
  
- @RequestMapping(value = "/", method = RequestMethod.GET)
- public ModelAndView hello() {
-  return new ModelAndView("index");
- }
+	@RequestMapping(value="/", method= RequestMethod.GET)
+    public String welcome() throws IOException {
+
+        System.out.println("Inside GET in Application Controller");
+
+        return "index";
+    }
+	
  
 }
