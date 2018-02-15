@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.finance.builder.TradeService;
+import com.finance.model.ExceptionDetails;
 import com.finance.model.TradeInfo;
 
 /**
@@ -34,12 +35,12 @@ public class TradesController {
 	
 	
 	@RequestMapping(value="/validateTradeInfo", method=RequestMethod.POST)
-    public List<TradeInfo> validateTradeInfo(@RequestBody List<TradeInfo> tradeInputObj) {
+    public List<TradeInfo> validateTradeInfo(@RequestBody List<TradeInfo> tradeInputObj) throws ExceptionDetails {
 		
 		try {
 			tradeInputObj = this.tradeservice.validateTradesService(tradeInputObj);
 		} catch (ParseException e) {
-			e.printStackTrace();
+			throw new GlobalExceptionController().handleparseException(e);
 		}
 		
         return tradeInputObj;

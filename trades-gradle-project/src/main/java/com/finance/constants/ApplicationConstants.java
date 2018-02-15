@@ -46,4 +46,9 @@ public class ApplicationConstants {
 	public static final String APPLICATION_VALIDATION_DELIVERY_EXPIRY_MISSING_DATE_MESSAGE="Delivery Date and Expiry Date could not be compared since atleast one of them is missing!";
 	public static final String APPLICATION_VALIDATION_PREMIUM_DELIVERY_MISSING_DATE_MESSAGE="Premium Date and Delivery Date could not be compared since atleast one of them is missing!";
 
+	public static final String APPLICATION_DATE_FORMAT_YYYY_MM_DD_ERROR_MESSAGE="Please correct Date format to yyyy-MM-dd";
+	public static final String APPLICATION_IMPROPER_REQUEST_FORMAT_ERROR_MESSAGE="Input Data is not in Correct format";
+	public static final String APPLICATION_UNSUPPORTED_METHOD_ERROR_MESSAGE="This request does not support GET method";
+	
+	
 }
